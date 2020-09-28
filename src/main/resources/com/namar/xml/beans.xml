@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <!-- <bean id="mundo" class="com.namar.beans.Mundo">
+    	<property name="saludo" value="Hola Mundo"></property>
+    </bean> -->
+    <!-- <bean class="com.namar.beans.NamarBeanPostProcessor"></bean>       
+    <bean id="persona" class="com.namar.beans.Persona" autowire="byName">
+    
+    	Inyeccion por constructor <constructor-arg index="0" value="1"></constructor-arg>
+    	<constructor-arg index="2" value="Nancy"></constructor-arg>
+    	<constructor-arg index="1" value="Alvarez"></constructor-arg> 
+    	
+    	<property name="id" value="1"></property>
+    	<property name="nombre" value="Nancy"></property>
+    	<property name="apodo" value="Alvarez"></property> 
+    
+    
+    </bean>
+    
+    <bean id="pais" class="com.namar.beans.Pais">
+    	<property name="nombre" value="Perú"></property>
+    </bean>
+    
+    <bean id="ciudad" class="com.namar.beans.Ciudad">
+    	<property name="nombre" value="Lima"></property>
+    </bean> -->
+     
+    <bean id="messi" class="com.namar.beans.Jugador">
+    	<property name="numero" value="10"></property>
+    	<property name="nombre" value="Lionel Messi"></property>
+    	<property name="equipo" ref="barcelona"></property>
+    </bean>
+    
+    <bean id="barcelona" class="com.namar.beans.Barcelona"></bean>
+    <bean id="juventus" class="com.namar.beans.Juventus"></bean>
+    
+</beans>
