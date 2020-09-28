@@ -30,6 +30,8 @@
     <bean id="ciudad" class="com.namar.beans.Ciudad">
     	<property name="nombre" value="Lima"></property>
     </bean> -->
+    
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
      
     <bean id="messi" class="com.namar.beans.Jugador">
     	<property name="numero" value="10"></property>

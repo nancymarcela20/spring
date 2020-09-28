@@ -1,11 +1,13 @@
 package com.namar.beans;
 
+import org.springframework.beans.factory.annotation.Required;
+
 import com.namar.interfaces.IEquipo;
 
 public class Jugador {
 
 	private int numero;
-	private String nombre;
+	private String nombre;	
 	private IEquipo equipo;
 	
 	public int getNumero() {
@@ -23,6 +25,8 @@ public class Jugador {
 	public IEquipo getEquipo() {
 		return equipo;
 	}
+	
+	@Required
 	public void setEquipo(IEquipo equipo) {
 		this.equipo = equipo;
 	}
