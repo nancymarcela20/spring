@@ -5,11 +5,24 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
    
-   <!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
-   <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean> -->  
+    <bean id="jugador1" class="com.namar.beans.Jugador">
+    	<property name="id" value="1"></property>
+    	<property name="nombre" value="namar"></property>
+    	<property name="equipo" ref="juventus"></property>
+    	<property name="camiseta" ref="camiseta1"></property>
+    </bean>  
     
-        
-    <context:component-scan base-package="com.namar"></context:component-scan>
-          
-        
+    <bean id="barcelona" class="com.namar.beans.Barcelona"></bean>       
+    <bean id="juventus" class="com.namar.beans.Juventus"></bean>    
+
+	<bean id="camiseta1" class="com.namar.beans.Camiseta">
+		<property name="id" value="1"></property>
+		<property name="numero" value="10"></property>
+		<property name="marca" ref="marca1"></property>
+	</bean>
+	
+	<bean id="marca1" class="com.namar.beans.Marca">
+		<property name="id" value="1"></property>
+		<property name="nombre" value="Marca1"></property>
+	</bean>
 </beans>

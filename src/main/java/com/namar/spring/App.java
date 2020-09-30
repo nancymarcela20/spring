@@ -1,5 +1,7 @@
 package com.namar.spring;
 
+import java.util.Scanner;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 //import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -19,43 +21,28 @@ import com.namar.interfaces.IEquipo;
 public class App {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		//ApplicationContext appContext = new ClassPathXmlApplicationContext("com/namar/xml/beans.xml");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Elija un equipo: 1-Barcelona 2- Juventus");
+		int respuesta = sc.nextInt();
 		
-		/*
-		 * AnnotationConfigApplicationContext appContext = new
-		 * AnnotationConfigApplicationContext(); appContext.register(AppConfig.class);
-		 * appContext.register(AppConfig2.class); appContext.refresh();
-		 * 
-		 * Mundo m = (Mundo) appContext.getBean("marte");
-		 * 
-		 * System.out.println(m.getSaludo());
-		 * 
-		 * ((ConfigurableApplicationContext)appContext).close();
-		 */
+		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/namar/xml/beans.xml");
+		Jugador jug = (Jugador) appContext.getBean("jugador1");
 		
-		/* Inyeccion por constructor
-		 * ApplicationContext appContext = new
-		 * ClassPathXmlApplicationContext("com/namar/xml/beans.xml"); Persona per =
-		 * (Persona) appContext.getBean("persona");
-		 * 
-		 * System.out.println(per.getId()+" "+per.getNombre()+" "+per.getApodo());
-		 * 
-		 * ((ConfigurableApplicationContext)appContext).close();
-		 */
+		switch(respuesta) {
+		 case 1:
+		      jug.setEquipo(new Barcelona());
+		      break;
+		 case 2:
+		      jug.setEquipo(new Juventus());
+		      break;
+		 default:		      
+		      break;
+		}
 		
-		 
-		  ApplicationContext appContext = new ClassPathXmlApplicationContext("com/namar/xml/beans.xml"); 
-		  //Jugador jug = (Jugador) appContext.getBean("messi");
-		  //IEquipo bar = (IEquipo) appContext.getBean("barcelona");
-		  //System.out.println(jug.getNombre()+"-"+jug.getEquipo().mostrar());		  
-		  
-		  Jugador jug = (Jugador) appContext.getBean("messi");
-		  
-		  System.out.println(jug.getNombre()+"-"+jug.getEquipo().mostrar());
-		  ((ConfigurableApplicationContext)appContext).close();
-		 
+		System.out.println(jug.getNombre() + "-" + jug.getEquipo().mostrar()+"-"+ jug.getCamiseta().getNumero()+"-"+ jug.getCamiseta().getMarca().getNombre());
+		((ConfigurableApplicationContext) appContext).close();
+
 	}
 
 }
