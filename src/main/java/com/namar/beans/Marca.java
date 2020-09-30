@@ -1,5 +1,8 @@
 package com.namar.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Marca {
 
 	private int id;
